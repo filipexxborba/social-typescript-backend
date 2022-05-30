@@ -1,0 +1,30 @@
+{
+  "name": "social-typescript-backend",
+  "version": "1.0.0",
+  "description": "Backend desenvolvido para minha rede social",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipexxborba/social-typescript-backend.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript"
+  ],
+  "author": "Filipe Borba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipexxborba/social-typescript-backend/issues"
+  },
+  "homepage": "https://github.com/filipexxborba/social-typescript-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-router": "^0.0.1",
+    "mongoose": "^6.3.4"
+  }
+}
