@@ -42,12 +42,23 @@ router.post("/create", (req, res) => {
     profile_pic:
       profile_pic ||
       "https://webriti.com/wp-content/themes/themeshop/images/testimonial/no-image.png",
-    isAdmin: false,
   });
   user
     .save()
     .then((user) => res.status(200).send(user))
     .catch((error) => res.status(500).send(error));
+});
+
+router.patch("/:id", (req, res) => {
+  const { profile_pic } = req.body;
+  User.findByIdAndUpdate(
+    req.params.id,
+    { profile_pic: profile_pic },
+    (error, user) => {
+      if (error) res.status(404).send(error);
+      else res.status(200).send(user);
+    }
+  );
 });
 
 module.exports = router;

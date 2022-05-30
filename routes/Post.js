@@ -30,4 +30,21 @@ router.post("/create", (req, res) => {
     .catch((error) => res.status(500).send(error));
 });
 
+// Delete a post
+router.delete("/:id", (req, res) => {
+  Post.findByIdAndDelete(req.params.id, (error, post) => {
+    if (error) res.status(404).send(error);
+    else res.status(200).send(post);
+  });
+});
+
+// Edit a post
+router.patch("/:id", (req, res) => {
+  const { content } = req.body;
+  Post.findByIdAndUpdate(req.params.id, { content: content }, (error, post) => {
+    if (error) res.status(500).send(error);
+    else res.status(200).send(post);
+  });
+});
+
 module.exports = router;
