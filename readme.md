@@ -1,6 +1,6 @@
 # Backend - Social Typescript
 
-Projeto construíndo com intuito de treinar Typescript no front-end juntamente com ReactJS. Essa API vai contem funções de Auth e de Posts
+Projeto construíndo com intuito de treinar Typescript no front-end juntamente com ReactJS. Essa API vai conter funções de Auth e de Posts
 
 ## Tecnologia usadas: 
 
