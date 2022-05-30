@@ -23,4 +23,8 @@ server.use(express.json());
 server.use("/auth", authRoute);
 server.use("/posts", postsRoute);
 
+server.get("/", (_, res) => {
+  res.status(200).send("Ok");
+});
+
 server.listen(port, () => console.log(`🏆 Servidor rodando na porta: ${port}`));
