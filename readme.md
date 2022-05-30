@@ -4,16 +4,16 @@ Projeto construíndo com intuito de treinar Typescript no front-end juntamente c
 
 ## Tecnologia usadas: 
 
-1- NodeJS;
-2- Express;
-3- MongoDB;
+1. NodeJS;
+2. Express;
+3. MongoDB;
 
 ## Features
 
-[x] Criação de login
-[x] Criação de post
-[x] Edição de post
-[x] Thumbs up nos post
+- [x] Criação de login
+- [x] Criação de post
+- [x] Edição de post
+- [x] Thumbs up nos post
 
 ## Como acessar o front-end?
 
