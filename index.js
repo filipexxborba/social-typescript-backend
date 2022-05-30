@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const authRoute = require("./routes/Auth");
+const postsRoute = require("./routes/Post");
 
 mongoose.connect(process.env.DB_CONNECTIONSTRING);
 const db = mongoose.connection;
@@ -17,4 +19,8 @@ server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
-server.listen(port, () => console.log(`Servidor rodando na porta: ${port}`));
+// Routes
+server.use("/auth", authRoute);
+server.use("/posts", postsRoute);
+
+server.listen(port, () => console.log(`🏆 Servidor rodando na porta: ${port}`));
