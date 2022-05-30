@@ -27,4 +27,6 @@ server.get("/", (_, res) => {
   res.status(200).send("Ok");
 });
 
-server.listen(port, () => console.log(`🏆 Servidor rodando na porta: ${port}`));
+server.listen(process.env.PORT || 3000, () =>
+  console.log(`🏆 Servidor rodando na porta: ${port}`)
+);
