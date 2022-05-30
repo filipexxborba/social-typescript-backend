@@ -13,7 +13,7 @@ db.once("open", () =>
 );
 
 const server = express();
-const port = process.env.SERVER_PORT || 9999;
+const port = process.env.SERVER_PORT || 8877;
 
 server.use(cors());
 server.use(express.urlencoded({ extended: true }));
