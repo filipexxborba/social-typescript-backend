@@ -49,7 +49,7 @@ router.post("/create", (req, res) => {
     .catch((error) => res.status(500).send(error));
 });
 
-router.patch("/:id", (req, res) => {
+router.post("/edit/:id", (req, res) => {
   const { name, profile_pic } = req.body;
   User.findByIdAndUpdate(
     req.params.id,
