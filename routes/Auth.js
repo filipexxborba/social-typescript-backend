@@ -50,10 +50,10 @@ router.post("/create", (req, res) => {
 });
 
 router.patch("/:id", (req, res) => {
-  const { profile_pic } = req.body;
+  const { name, profile_pic } = req.body;
   User.findByIdAndUpdate(
     req.params.id,
-    { profile_pic: profile_pic },
+    { profile_pic: profile_pic, name: name },
     (error, user) => {
       if (error) res.status(404).send(error);
       else res.status(200).send(user);
