@@ -51,14 +51,17 @@ router.post("/create", (req, res) => {
 
 router.post("/edit/:id", (req, res) => {
   const { name, profile_pic } = req.body;
-  User.findByIdAndUpdate(
-    req.params.id,
-    { profile_pic: profile_pic, name: name },
-    (error, user) => {
-      if (error) res.status(404).send(error);
-      else res.status(200).send(user);
+  User.findById(req.params.id, (error, user) => {
+    if (error) res.status(500).send(error);
+    else {
+      user.name = name;
+      user.profile_pic = profile_pic;
+      user
+        .save()
+        .then((user) => res.status(200).send(user))
+        .catch((error) => res.status(500).send(error));
     }
-  );
+  });
 });
 
 module.exports = router;
